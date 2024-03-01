@@ -5,6 +5,6 @@ export type TServicePart = {
   reason: string;
   serialNumber: string;
   modelNo: string;
-  exptectedDate: Date;
-  submissionDate: Date;
+  exptectedDate: string;
+  submissionDate: string;
 };

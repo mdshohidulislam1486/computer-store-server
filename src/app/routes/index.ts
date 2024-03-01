@@ -3,6 +3,7 @@ import { AuthRoutes } from '../modules/auth/auth.route';
 import { UserRoutes } from '../modules/user/user.routes';
 import { ComputerRoutes } from '../modules/product/product.routes';
 import { SoldItmeRoutes } from '../modules/soldProduct/soldproduct-route';
+import { PartServiceRoute } from '../modules/partsService/partService.routes';
 
 const router = Router();
 
@@ -25,7 +26,7 @@ const moduleRoutes = [
   },
   {
     path: '/service',
-    route: SoldItmeRoutes,
+    route: PartServiceRoute,
   },
 ];
 

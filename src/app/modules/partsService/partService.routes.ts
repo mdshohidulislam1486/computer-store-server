@@ -1,12 +1,14 @@
 import express from 'express';
 import validateRequest from '../../middlewares/validateRequest';
+import { serviceValidation } from './partService.validation';
+import { servicePartController } from './partService.controller';
 
 const router = express.Router();
 
 router.post(
   '/part-service',
-  validateRequest(ComputerValidation.createComputer),
-  ConputerControllers.addComputer
+  validateRequest(serviceValidation.createServiceRequest),
+  servicePartController.addServicePart
 );
 
-export const ComputerRoutes = router;
+export const PartServiceRoute = router;

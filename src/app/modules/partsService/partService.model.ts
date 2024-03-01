@@ -8,8 +8,8 @@ const serviceRequestModel = new Schema<TServicePart>({
   reason: { type: String, required: true },
   serialNumber: { type: String, required: true },
   modelNo: { type: String, required: true },
-  exptectedDate: { type: Date, required: true },
-  submissionDate: { type: Date, required: true },
+  exptectedDate: { type: String, required: true },
+  submissionDate: { type: String, required: true },
 });
 
 export const servicePartModel = model<TServicePart>(
