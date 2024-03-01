@@ -6,7 +6,7 @@ const userValidationSchema = z.object({
       fullName: z.string(),
       email: z.string(),
       password: z.string(),
-      role: z.enum(['admin']),
+      role: z.enum(['seller', 'buyer']),
       isDeleted: z.boolean().optional(),
       passwordChangedAt: z.string().optional(),
     }),

@@ -1,11 +1,10 @@
 import express from 'express';
-import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import { AuthValidation } from './auth.validation';
 import { AuthControllers } from './auth.controller';
 
 export const USER_ROLE = {
-  admin: 'admin',
+  admin: 'seller',
 } as const;
 const router = express.Router();
 

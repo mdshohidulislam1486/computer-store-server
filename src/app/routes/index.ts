@@ -23,6 +23,10 @@ const moduleRoutes = [
     path: '/sell',
     route: SoldItmeRoutes,
   },
+  {
+    path: '/service',
+    route: SoldItmeRoutes,
+  },
 ];
 
 moduleRoutes.forEach((route) => router.use(route.path, route.route));

@@ -24,7 +24,7 @@ const userSchema = new Schema<TUser, UserModel>(
     },
     role: {
       type: String,
-      enum: ['admin'],
+      enum: ['seller', 'buyer'],
     },
     isDeleted: {
       type: Boolean,
