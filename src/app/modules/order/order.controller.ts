@@ -15,6 +15,21 @@ const addOrder = catchAsync(async (req, res) => {
   });
 });
 
+const getAllOrder = catchAsync(async (req, res) => {
+  const getQuery = req.query as { time: string };
+  if (!getQuery.time) {
+    getQuery.time = 'daily';
+  }
+  const result = await orderService.getAllOrderFromDB(getQuery);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Order retrived successs fully ',
+    data: result,
+  });
+});
+
 export const orderController = {
   addOrder,
+  getAllOrder,
 };

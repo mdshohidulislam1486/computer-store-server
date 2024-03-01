@@ -6,7 +6,7 @@ const TItemsSchema = z.object({
   quantity: z.number(),
   unitPrice: z.number(),
   image: z.string(),
-  availableItem: z.number(),
+  availableItem: z.string(),
 });
 
 const orderZodScheam = z.object({
