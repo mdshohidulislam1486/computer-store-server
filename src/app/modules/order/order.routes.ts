@@ -5,7 +5,7 @@ import { orderController } from './order.controller';
 const router = express.Router();
 
 router.post(
-  '/create-order',
+  '/submit-order',
   validateRequest(orderValidation.orderZodScheam),
   orderController.addOrder
 );

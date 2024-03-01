@@ -1,10 +1,12 @@
 import httpStatus from 'http-status';
 import sendResponse from '../../utils/sendResponse';
 import { orderService } from './order.service';
+import catchAsync from '../../utils/catchAsyncs';
 
 const addOrder = catchAsync(async (req, res) => {
-  const serviceReqData = req.body;
-  const result = await orderService.addNewOrder(serviceReqData);
+  const order = req.body;
+  console.log({ order });
+  const result = await orderService.addNewOrder(order);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,

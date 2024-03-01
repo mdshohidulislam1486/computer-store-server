@@ -10,12 +10,14 @@ const TItemsSchema = z.object({
 });
 
 const orderZodScheam = z.object({
-  buyerName: z.string(),
-  shippingAddress: z.string(),
-  quantity: z.number(),
-  shippingCost: z.number(),
-  items: z.array(TItemsSchema),
-  purchaseDate: z.string(),
+  body: z.object({
+    buyerName: z.string(),
+    shippingAddress: z.string(),
+    quantity: z.number(),
+    shippingCost: z.number(),
+    items: z.array(TItemsSchema),
+    purchaseDate: z.string(),
+  }),
 });
 
 export const orderValidation = {
