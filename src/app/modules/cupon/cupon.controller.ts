@@ -8,8 +8,10 @@ const addCupon = catchAsync(async (req, res) => {
   const result = await cuponService.addCuponIntoDB(order);
   sendResponse(res, {
     statusCode: httpStatus.OK,
-    success: true,
-    message: 'Cupon Added Success fully ',
+    success: result ? true : false,
+    message: result
+      ? 'Cupon Added Success fully'
+      : 'Cupon not added, Please try with different code ',
     data: result,
   });
 });
@@ -34,8 +36,19 @@ const deleteSingleCupon = catchAsync(async (req, res) => {
   });
 });
 
+const getSingleCupon = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const result = await cuponService.getSingleCuponFromDB(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: result ? true : false,
+    message: 'Cupon data retrived  ',
+    data: result,
+  });
+});
 export const cuponController = {
   addCupon,
   getlAllCupon,
   deleteSingleCupon,
+  getSingleCupon,
 };

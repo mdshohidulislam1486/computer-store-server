@@ -12,6 +12,7 @@ router
     validateRequest(cuponValidation.cuponZodSchema),
     cuponController.addCupon
   )
+  .get('/:id', cuponController.getSingleCupon)
   .delete('/:id', cuponController.deleteSingleCupon);
 
 export const CuponRoutes = router;
